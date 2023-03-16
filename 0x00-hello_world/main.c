@@ -9,6 +9,7 @@
 int main(void)
 {
 
-	/*This function reuturns nothing*/
+	/*This function reuturns Hello World*/
+	printf("Hell World");
 	return (0);
 }
