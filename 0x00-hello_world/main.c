@@ -4,6 +4,7 @@
 
 int main(void)
 {
+
 	/*This function reuturns nothing*/
-	return(0);
+	return (0);
 }
