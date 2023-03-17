@@ -15,5 +15,6 @@ int main(void)
 		c = i;
 		putchar(c);
 	}
+	printf("\n");
 	return (0);
 }
