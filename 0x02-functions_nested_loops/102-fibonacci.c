@@ -7,13 +7,17 @@
 
 int main(void)
 {
-	int i, a, b;
+	int i, a, b, result;
 
-	for (i = 0, sum = 0; a < 4000000; i++)
+	a = 1;
+	b = 2;
+
+	for (i = 0, i < 49; i++)
 	{
 		printf("%d, ", a);
-		b = a + b;
-		a = b - a;
+		result = a + b;
+		a = b;
+		b = result;
 	}
 	return (0);
 }
