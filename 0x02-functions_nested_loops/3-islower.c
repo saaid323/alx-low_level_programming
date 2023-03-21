@@ -2,7 +2,7 @@
 
 /**
  * _islower -  checks for lowercase character.
- * c - take integer
+ * @c - integer argument
  * Return: betty Always
  */
 
