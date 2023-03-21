@@ -12,7 +12,10 @@ void print_times_table(int x)
 
 	for (k = 0; k <= x; k++)
 	{
-		printf("0,  ");
+		if (k < x)
+		{
+			printf("0,  ");
+		}
 	}
 	printf("\n");
 	for (i = 1; i <= x; i++)
