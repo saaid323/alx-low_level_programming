@@ -13,14 +13,14 @@ int main(void)
 	b = 2;
 	for (i = 0; i <= 49; i++)
 	{
-		if (i == 49)
+		if (i < 49)
 		{
-			printf("%ld", a);
+			printf("%ld, ", a);
+			result = a + b;
+			a = b;
+			b = result;
 		}
-		printf("%ld, ", a);
-		result = a + b;
-		a = b;
-		b = result;
+		printf("%ld"a);
 	}
 	return (0);
 }
