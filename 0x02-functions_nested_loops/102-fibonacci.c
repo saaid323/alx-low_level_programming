@@ -7,6 +7,8 @@
 
 int main(void)
 {
+	int i, a, b;
+
 	for (i = 0; a <= 50; i++)
 	{
 		printf("%d ", a);
