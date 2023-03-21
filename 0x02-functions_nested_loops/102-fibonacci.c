@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (i == 49)
 		{
-			printf("%ld", a)
+			printf("%ld", a);
 		}
 		printf("%ld, ", a);
 		result = a + b;
