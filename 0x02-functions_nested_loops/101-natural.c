@@ -17,7 +17,7 @@ int main(void)
 		}
 
 	}
-	printf("%d", total);
+	printf("%d\n", total);
 
 	return (0);
 }
