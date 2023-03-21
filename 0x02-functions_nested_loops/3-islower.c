@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
-  * _islower - Checks for lowercase character
-  * Return: 1 for lowercase character or 0 for anything else
-  */
+ * _islower -  checks for lowercase character.
+ * c - take integer
+ * Return: betty Always
+ */
 
 int _islower(int c)
 {
