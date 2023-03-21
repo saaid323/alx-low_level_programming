@@ -14,7 +14,7 @@ void print_times_table(int x)
 	{
 		if (k < x)
 		{
-			printf("0,  ");
+			printf("0,   ");
 		}
 		else
 		{
@@ -24,13 +24,13 @@ void print_times_table(int x)
 	printf("\n");
 	for (i = 1; i <= x; i++)
 	{
-		printf("0,  ");
+		printf("0,   ");
 		for (j = 1; j <= x; j++)
 		{
 			printf("%d", (i * j));
 			if (j < x)
 			{
-				printf(",  ");
+				printf(",   ");
 			}
 		}
 		printf("\n");
