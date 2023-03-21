@@ -16,6 +16,7 @@ void print_times_table(int x)
 		{
 			printf("0,  ");
 		}
+		printf("0");
 	}
 	printf("\n");
 	for (i = 1; i <= x; i++)
