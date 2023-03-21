@@ -11,7 +11,7 @@ int main(void)
 
 	for (i = 0; a <= 20365011074; i++)
 	{
-		printf("%d ", a);
+		printf("%d, ", a);
 		b = a + b;
 		a = b - a;
 	}
