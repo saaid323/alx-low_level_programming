@@ -4,6 +4,7 @@
 /**
  * _isalpha - checks for alphabetic character.
  * @c: int parameter
+ * Return - 0 Always
  */
 
 
