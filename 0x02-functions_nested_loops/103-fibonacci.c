@@ -10,10 +10,10 @@ int main(void)
 	int n = 4000000;
 	int sum = 0;
 	int a = 1, b = 2;
-	int temp = b;
 
 	while (b < n)
 	{
+		int temp = b;
 		if (b % 2 == 0)
 		{
 			sum += b;
