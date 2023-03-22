@@ -14,6 +14,7 @@ int main(void)
 	while (b < n)
 	{
 		int temp = b;
+
 		if (b % 2 == 0)
 		{
 			sum += b;
