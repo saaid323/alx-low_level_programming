@@ -10,6 +10,7 @@ int main(void)
 	int n = 4000000;
 	int sum = 0;
 	int a = 1, b = 2;
+	int temp = b;
 
 	while (b < n)
 	{
@@ -17,7 +18,6 @@ int main(void)
 		{
 			sum += b;
 		}
-		int temp = b;
 
 		b += a;
 		a = temp;
