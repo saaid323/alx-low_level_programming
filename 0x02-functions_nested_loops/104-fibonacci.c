@@ -7,16 +7,18 @@
 
 int main(void)
 {
-	int n = 98;
 	int a = 1, b = 2;
 
-	while (a < n)
-	{
-		int temp = a;
+	printf("%d, %d", a, b);
 
-		printf("%d\n", a);
-		a += b;
+	for (int i = 3; i <= 98; i++) 
+	{
+		int temp = a + b;
+
+		printf(", %d", temp);
+		a = b;
 		b = temp;
 	}
+	printf("\n");
 	return (0);
 }
