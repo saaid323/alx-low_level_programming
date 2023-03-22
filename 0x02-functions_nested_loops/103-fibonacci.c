@@ -10,10 +10,9 @@ int main(void)
 	long int n = 4000000;
 	long int a = 1;
 	long int b = 2;
-	long int sum;
-	long result;
+	long int sum, result, x;
 
-	for (int x = 1; x <= n; x++)
+	for (x = 1; x <= n; x++)
 	{
 		if (a % 2 != 0)
 		{
@@ -23,6 +22,6 @@ int main(void)
 		a = b;
 		b = result;
 	}
-	printf("%d", sum);
+	printf("%ld", sum);
 	return (0);
 }
