@@ -10,7 +10,8 @@ int main(void)
 	long int n = 4000000;
 	long int a = 1;
 	long int b = 2;
-	long int sum, result, x;
+	long int sum, result;
+	int x;
 
 	for (x = 1; x <= n; x++)
 	{
