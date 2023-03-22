@@ -7,21 +7,20 @@
 
 int main(void)
 {
-	long int n = 4000000;
-	long int a = 1;
-	long int b = 2;
-	long int sum, result;
-	int x;
+	int n = 4000000;
+	int sum = 0;
+	int a = 1, b = 2;
 
-	for (x = 1; x <= n; x++)
+	while (b < n)
 	{
-		if (a % 2 != 0)
+		if (b % 2 == 0)
 		{
-			sum += a;
+			sum += b;
 		}
-		result = a + b;
-		a = b;
-		b = result;
+		int temp = b;
+
+		b += a;
+		a = temp;
 	}
 	printf("%ld", sum);
 	return (0);
