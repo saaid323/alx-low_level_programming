@@ -7,11 +7,12 @@
 
 int main(void)
 {
+	int i;
 	int a = 1, b = 2;
 
 	printf("%d, %d", a, b);
 
-	for (int i = 3; i <= 98; i++) 
+	for (i = 3; i <= 98; i++) 
 	{
 		int temp = a + b;
 
