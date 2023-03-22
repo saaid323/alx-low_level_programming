@@ -22,6 +22,6 @@ int main(void)
 		b += a;
 		a = temp;
 	}
-	printf("%ld", sum);
+	printf("%d", sum);
 	return (0);
 }
