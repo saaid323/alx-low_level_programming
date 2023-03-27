@@ -8,9 +8,15 @@
 
 void rev_string(char *s)
 {
-	int i, j;
+	int i, j, a;
 
-	for (i = 0, j = 9 - 1; i < j; i++, j--)
+	a = 0;
+	while (s[a] != '\0')
+	{
+		a++;
+	}
+
+	for (i = 0, j = a - 1; i < j; i++, j--)
 	{
 		int temp = s[i];
 
