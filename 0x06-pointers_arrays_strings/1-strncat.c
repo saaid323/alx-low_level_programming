@@ -3,7 +3,9 @@
  * _strncat - function that concatenates two strings
  * @dest: pointer to string
  * @src: pointer to string
- * Return: Return a pointer to the resulting string dest*/
+ * @n: interger argument
+ * Return: Return a pointer to the resulting string dest
+ */
 
 
 char *_strncat(char *dest, char *src, int n)
