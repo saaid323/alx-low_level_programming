@@ -8,20 +8,19 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, s;
+	int s;
 
-	i = 0;
-	if (s1[i] == s2[i])
+	if (*s1 == *s2)
 	{
-		s = s1[i] - s2[i];
+		s = *s1 - *s2;
 	}
-	else if (s1[i] > s2[i])
+	else if (*s1 > *s2)
 	{
-		s = s1[i] - s2[i];
+		s = *s1 - *s2;
 	}
-	else if (s1[i] < s2[i])
+	else if (*s1 < *s2)
 	{
-		s = s1[i] - s2[i];
+		s = *s1 - *s2;
 	}
 	return (s);
 }
