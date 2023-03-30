@@ -8,8 +8,8 @@
 
 char *leet(char *s)
 {
-	char upper[] = {"AELOT"};
-	char low[] = {"aelot"};
+	char upper[] = {"AEOTL"};
+	char low[] = {"aeotl"};
 	char ch[] = {"43071"};
 	int i, j;
 
