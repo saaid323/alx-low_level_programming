@@ -21,5 +21,6 @@ char *cap_string(char *s)
 		}
 		len++;
 	}
+	s[len] = '\0';
 	return (s);
 }
