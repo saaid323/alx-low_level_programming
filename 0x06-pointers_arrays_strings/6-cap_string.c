@@ -11,14 +11,12 @@ char *cap_string(char *s)
 
 	for (len = 0; s[len] != '\0'; len++)
 	{
-		if (i == 0)
-		{
-			s[i] -= 32;
-		}
 		for (i = 0; i < 13; i++)
 		{
 			if (s[len] == sep[i] && (s[len + 1] >= 'a' && s[len + 1] <= 'z'))
 			{
+				if (len == 0)
+					s[len] -= 32;
 				len++;
 				s[len] -= 32;
 			}
