@@ -9,7 +9,7 @@ char *cap_string(char *s)
 	int sep[] = {32, 9, 10, 44, 59, 46, 33, 34, 63, 40, 41, 123, 125};
 	int len, i;
 
-	for (len = 0; s[len] != '\0'; len++)
+	while (s[len] != '\0')
 	{
 		for (i = 0; i < 13; i++)
 		{
@@ -19,6 +19,7 @@ char *cap_string(char *s)
 				s[len] -= 32;
 			}
 		}
+		len++;
 	}
 	return (s);
 }
