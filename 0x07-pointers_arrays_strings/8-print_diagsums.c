@@ -10,12 +10,11 @@ void print_diagsums(int *a, int size)
 {
 	int i;
 	int total = 0, total1 = 0;
-	
+
 	for (i = 0; i < size; i++)
 	{
 		total += a[i * size + i];
 		total1 += a[(i + 1) * size - (i + 1)];
 	}
-    
-    printf("%d, %d\n", total, total1);
+	printf("%d, %d\n", total, total1);
 }
