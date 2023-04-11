@@ -15,8 +15,6 @@ char *_strdup(char *str)
 
 	if (len == 0)
 		return (NULL);
-	if (*str == 32)
-		return (" ");
 	if (str == 0)
 	{
 		return (NULL);
