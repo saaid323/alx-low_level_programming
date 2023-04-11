@@ -10,10 +10,10 @@
 
 int main(int argc, char *argv[])
 {
-	char arr[] = {25, 10, 5, 2, 1};
+	int arr[] = {25, 10, 5, 2, 1};
 	int i;
 	int total = 0;
-	int n = atoi(argv[2]);
+	int n = atoi(argv[1]);
 
 	if (argc <= 1)
 	{
