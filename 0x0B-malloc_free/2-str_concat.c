@@ -10,19 +10,20 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int len1 = strlen(s1);
-	int len2 = strlen(s2);
-	char *c = malloc(sizeof(char) * (len1 + len2 + 1));
+	int len1, len2;
 	int i;
+	char *c;
 
-	if (s1 == NULL)
+	if (s1 != NULL)
 	{
-		return (NULL);
+		len1 = strlen(s1);
 	}
-	if (s1 == NULL)
+	if (s1 != NULL)
 	{
-		return (NULL);
+		len2 = strlen(s2);
 	}
+	
+	c = malloc(sizeof(char) * (len1 + len2 + 1));
 
 	if (c == NULL)
 	{
