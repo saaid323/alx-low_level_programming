@@ -13,13 +13,16 @@ int main(int argc, char *argv[])
 	int arr[] = {25, 10, 5, 2, 1};
 	int i;
 	int total = 0;
-	int n = atoi(argv[1]);
+	int n;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	n = atoi(argv[1]);
+
 	if (n < 0)
 	{
 		printf("0\n");
