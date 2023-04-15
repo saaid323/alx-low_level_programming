@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <stdbool.h>
 
 /**
  * main - Entery point
@@ -13,27 +13,35 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int total = 0;
+	bool error;
 
-        if (argc == 1)
-        {
-            printf("0\n");
-	    return (1);
-        }
-        else
-        {
-            for (i = 1; i < argc; i++)
-                {
-                    if (isdigit(argv[i]))
-                    {
-                        printf("Error\n");
-                    }
-                    else
-                    {
-                        total += atoi(argv[i]);
-                    }
-                }
-            printf("%d\n", total);
-        }
-
-        return (0);
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (1);
+	}
+	else
+	{
+		for (i = 1; i < argc; i++)
+		{
+			if (!atoi(argv[i]))
+			{
+				error =  true;
+				break;
+			}
+			else
+			{
+				total += atoi(argv[i]);
+			}
+		}
+	}
+	if (error)
+	{
+		printf("Error\n");
+	}
+	else
+	{
+		printf("%d\n", total);
+	}
+	return (0);
 }
