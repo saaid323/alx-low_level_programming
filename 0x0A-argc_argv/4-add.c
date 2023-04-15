@@ -10,8 +10,9 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, j;
 	int total = 0;
+	char *ptr;
 
 	if (argc == 1)
 	{
@@ -22,14 +23,15 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!atoi(argv[i]))
+			j = strtol(argv[i], &ptr, 10);
+			if (*ptr)
 			{
 				printf("Error\n");
 				return (1);
 			}
 			else
 			{
-				total += atoi(argv[i]);
+				total += j;
 			}
 		}
 	}
