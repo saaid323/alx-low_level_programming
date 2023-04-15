@@ -38,10 +38,11 @@ int main(int argc, char *argv[])
 	if (error)
 	{
 		printf("Error\n");
+		return (1);
 	}
 	else
 	{
 		printf("%d\n", total);
+		return (0);
 	}
-	return (0);
 }
