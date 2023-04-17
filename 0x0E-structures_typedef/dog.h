@@ -15,12 +15,6 @@ struct dog
 	float age;
 };
 
-/**
- * struct dog_t - details about dog
- * @name: the name of the dog
- * @owner: owner of the dog
- * @age: age of the dog
- */
 
 typedef struct dog dog_t;
 
