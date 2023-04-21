@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 /**
  * op_add - adds two number
  * @a: first number
@@ -26,11 +26,25 @@ int op_mul(int a, int b) { return (a * b); }
  * @b:second number
  * Return: returns division of a and b
  */
-int op_div(int a, int b) { return (a / b); }
+int op_div(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		return (100);
+	}
+	return (a / b); }
 /**
  * op_mod - module two number
  * @a: first number
  * @b:second number
  * Return: returns remainder of the division of a and b
  */
-int op_mod(int a, int b) { return (a % b); }
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a % b); }
