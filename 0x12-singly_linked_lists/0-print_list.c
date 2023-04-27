@@ -9,19 +9,33 @@
 size_t print_list(const list_t *h)
 {
 	int count = 0;
+	char nil[] = "[0] (nil)\n";
+	int _nil = strlen(nil);
+	int i;
 
 	while (h)
 	{
 		count++;
-		if (h->str != NULL)
+		if (h->str == NULL)
 		{
-			printf("[%i] ", h->len);
-			printf("%s\n", h->str);
+			for (i = 0; i < _nil; i++)
+			{
+				putchar(nil[i]);
+			}
 		}
 		else
 		{
-			printf("[0] ");
-			printf("(nil)\n");
+			int len = strlen(h->str);
+
+			putchar('[');
+			putchar(h->len + '0');
+			putchar(']');
+			putchar(' ');
+			for (i = 0; i < len; i++)
+			{
+				putchar(h->str[i]);
+			}
+			putchar('\n');
 		}
 		h = h->next;
 	}
