@@ -12,7 +12,6 @@ size_t print_list(const list_t *h)
 
 	while (h)
 	{
-		count++;
 		if (h->str != NULL)
 		{
 			printf("[%d] ", h->len);
@@ -22,8 +21,8 @@ size_t print_list(const list_t *h)
 		{
 			fwrite("[0] (nil)\n", 1, 10, stdout);
 		}
+		count++;
 		h = h->next;
 	}
 	return (count);
-	printf("\n");
 }
