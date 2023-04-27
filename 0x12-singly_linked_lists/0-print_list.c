@@ -20,8 +20,7 @@ size_t print_list(const list_t *h)
 		}
 		else
 		{
-			printf("[0] ");
-			printf("(nil)\n");
+			fwrite("[0] (nil)\n", 1, 10, stdout);
 		}
 		h = h->next;
 	}
