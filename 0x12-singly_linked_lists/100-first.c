@@ -1,16 +1,14 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * print - apply attribute constructor to print before main
- * is executed
+ * print - Apply the constructor attribute to myStartupFun() so that it is
+ * executed before main()
  */
-
-void print(void)__attribute__ ((constructor));
+void print(void) __attribute__ ((constructor));
 
 /**
- * print - prints
+ * print - implementation of print
  */
-
 void print(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
