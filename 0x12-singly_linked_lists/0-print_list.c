@@ -20,22 +20,22 @@ size_t print_list(const list_t *h)
 		{
 			for (i = 0; i < _nil; i++)
 			{
-				putchar(nil[i]);
+				_putchar(nil[i]);
 			}
 		}
 		else
 		{
 			int len = strlen(h->str);
 
-			putchar('[');
-			putchar(h->len + '0');
-			putchar(']');
-			putchar(' ');
+			_putchar('[');
+			_putchar(h->len + '0');
+			_putchar(']');
+			_putchar(' ');
 			for (i = 0; i < len; i++)
 			{
-				putchar(h->str[i]);
+				_putchar(h->str[i]);
 			}
-			putchar('\n');
+			_putchar('\n');
 		}
 		h = h->next;
 	}
