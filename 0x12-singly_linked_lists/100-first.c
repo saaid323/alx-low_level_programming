@@ -1,13 +1,12 @@
 #include<stdio.h>
 
 /**
- * print - Apply the constructor attribute to myStartupFun() so that it is
- * executed before main()
+ * print - This function is assigned to execute before main
  */
 void print(void) __attribute__ ((constructor));
 
 /**
- * print - implementation of print
+ * print - prints
  */
 void print(void)
 {
