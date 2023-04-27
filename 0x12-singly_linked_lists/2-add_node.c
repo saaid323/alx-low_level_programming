@@ -2,7 +2,8 @@
 
 /**
  * add_node - adds a new node at the beginning of a list_t list
- * @c: poiner to string
+ * @str: poiner to string
+ * @head: pointer to struct pointer
  * Return: the address of the new element, or NULL if it failed
  */
 
