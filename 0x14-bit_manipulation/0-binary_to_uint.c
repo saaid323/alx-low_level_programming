@@ -16,9 +16,13 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0; i < len; i++)
 	{
-		if (b[i] >= 48 && b[i] <= 49)
+		if (b[i] == '1')
 		{
-			sum += (b[i] - '0') * pow(2, len - i - 1);
+			sum = (sum << 1) | 1;
+		}
+		else if (b[i] == '0')
+		{
+			sum = sum << 1;
 		}
 		else
 			return (0);
