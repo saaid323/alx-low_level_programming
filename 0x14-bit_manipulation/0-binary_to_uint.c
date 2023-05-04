@@ -14,9 +14,13 @@ unsigned int binary_to_uint(const char *b)
 	int len = strlen(b);
 	int i;
 
+	if (!b)
+		return 0;
 	for (i = 0; i < len; i++)
 	{
-		if (b[i] == '1')
+		if (b[i] != '0' && b[i] != 'i')
+			return 0;
+		else if (b[i] == '1')
 		{
 			sum = (sum << 1) | 1;
 		}
@@ -24,8 +28,6 @@ unsigned int binary_to_uint(const char *b)
 		{
 			sum = sum << 1;
 		}
-		else
-			return (0);
 	}
 	return (sum);
 }
