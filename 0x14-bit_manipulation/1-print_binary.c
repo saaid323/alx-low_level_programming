@@ -7,23 +7,24 @@
 
 void print_binary(unsigned long int n)
 {
-	int binary_digits[64];
-	int i = 0, j;
+	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int started = 0;
 
-	if (n == 0)
+	while (mask != 0)
+	{
+		if (n & mask)
+		{
+			started = 1;
+			_putchar('1');
+		}
+		else if (started)
+		{
+			_putchar('0');
+		}
+		mask >>= 1;
+	}
+	if (!started)
 	{
 		_putchar('0');
-		return;
-	}
-
-	while (n > 0)
-	{
-		binary_digits[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(binary_digits[j] + '0');
 	}
 }
