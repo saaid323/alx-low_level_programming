@@ -1,55 +1,50 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
+
+/**
+ * check_error - checks if there was an error and exits if so
+ * @check: the return value to check for an error
+ * @error_message: the error message to display if there is an error
+ */
+
+void check_error(int check, char *error_message)
+{
+	if (check == -1)
+	{
+		perror(error_message);
+		exit(EXIT_FAILURE);
+	}
+}
+
 /**
  * main - opies the content of a file to another file
  * @argc: argument count
  * @argv: argument vector
- * Return: 0 if success else 1
+ * Return: return EXIT_SUCCESS if success
  */
+
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, bytes_read;
+	int fd_from, fd_to, num_read, num_written;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
-		exit(1);
+		fprintf(stderr, "Usage: %s file_from file_to\n", argv[0]);
+		exit(EXIT_FAILURE);
 	}
 	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from == -1)
+	check_error(fd_from, "Error opening source file");
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR |
+		S_IRGRP | S_IWGRP | S_IROTH);
+	check_error(fd_to, "Error opening destination file");
+	while ((num_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		printf("Error: Cannot read from file %s\n", argv[1]);
-		exit(1);
+		num_written = write(fd_to, buffer, num_read);
+		check_error(num_written, "Error writing to destination file");
 	}
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (fd_to == -1)
-	{
-		printf("Error: Cannot write to file %s\n", argv[2]);
-		exit(1);
-	}
-	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		if (write(fd_to, buffer, bytes_read) != bytes_read)
-		{
-			printf("Error: Cannot write to file %s\n", argv[2]);
-			exit(1);
-		}
-	}
-	if (bytes_read == -1)
-	{
-		printf("Error: Cannot read from file %s\n", argv[1]);
-		exit(1);
-	}
-	if (close(fd_from) == -1)
-	{
-		printf("Error: Cannot close file descriptor %d\n", fd_from);
-		exit(1);
-	}
-	if (close(fd_to) == -1)
-	{
-		printf("Error: Cannot close file descriptor %d\n", fd_to);
-		exit(1);
-	}
-	return (0);
+	check_error(num_read, "Error reading from source file");
+	check_error(close(fd_from), "Error closing source file");
+	check_error(close(fd_to), "Error closing destination file");
+	return (EXIT_SUCCESS);
 }
