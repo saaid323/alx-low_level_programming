@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * print_dlistint - prints all the elements of a dlistint_t list
- * @head: pointer to struct
+ * @h: pointer to struct
  * Return: the number of nodes
  */
 
@@ -10,11 +10,11 @@ size_t print_dlistint(const dlistint_t *h)
 	int count;
 
 	count = 0;
-	while(h)
+	while (h)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
-		count ++;
+		count++;
 	}
-	return count;
+	return (count);
 }
