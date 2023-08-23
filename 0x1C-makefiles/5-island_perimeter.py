@@ -8,11 +8,11 @@ def island_perimeter(grid):
     col = len(grid[0])
     total = 0
     for i in range(row):
-        for x in range(col):
+        for j in range(col):
             if grid[i][j] == 1:
                 total += 4
                 if i > 0 and grid[i - 1][j] == 1:
                     total -= 2
-                if j > 0 and grid[i ][j - 1] == 1:
+                if j > 0 and grid[i][j - 1] == 1:
                     total -= 2
     return total
