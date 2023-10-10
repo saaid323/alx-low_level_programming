@@ -12,9 +12,9 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t l = 0, r = size - 1, i;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
-	while (l < r)
+	while (l <= r)
 	{
 		size_t mid = (l + r) / 2;
 
