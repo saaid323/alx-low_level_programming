@@ -1,42 +1,55 @@
 #include "search_algos.h"
 
 /**
+* recursive - searches for a value in a sorted array of integers
+* @array: pointer to the first element of the array to search in
+* @l: index of the left integer
+* @r: index of the right integer
+* @value: the value to search for
+* Return: return the index where value is located
+*/
+
+int recursive(int *array, int l, int r, int value)
+{
+	int mid, i;
+
+	if (r >= l)
+		mid = (l + r) / 2;
+	else
+		return (-1);
+	printf("Searching in array: ");
+	for (i = l; i <= r; i++)
+	{
+		printf("%d", array[i]);
+		if (i < r)
+			printf(", ");
+	}
+	printf("\n");
+	if (array[mid] == value)
+	{
+		if (array[mid - 1] == value)
+			return (recursive(array, l, mid, value));
+		else
+			return (mid);
+	}
+	if (array[mid] > value)
+		return (recursive(array, l, mid - 1, value));
+	return (recursive(array, mid + 1, r, value));
+}
+
+
+/**
 * advanced_binary - searches for a value in a sorted array of integers
 * @array: pointer to the first element of the array to search in
 * @size: the number of elements in array
 * @value: the value to search for
 * Return: return the index where value is located
 */
-
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t l = 0, r = size - 1, i;
+	size_t l = 0, r = size - 1;
 
 	if (array == NULL)
 		return (-1);
-	while (l <= r)
-	{
-		size_t mid = (l + r) / 2;
-
-		printf("Searching in array: ");
-		for (i = l; i <= r; i++)
-		{
-			printf("%d", array[i]);
-			if (i < r)
-				printf(", ");
-		}
-		printf("\n");
-		if (array[mid] < value)
-			l = mid + 1;
-		if (array[mid] > value)
-			r = mid;
-		if (array[mid] == value)
-		{
-			if (array[mid - 1] == value)
-				r = mid;
-			else
-				return (mid);
-		}
-	}
-	return (-1);
+	return (recursive(array, l, r, value));
 }
