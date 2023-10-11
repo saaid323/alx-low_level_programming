@@ -33,7 +33,7 @@ int recursive(int *array, int l, int r, int value)
 			return (recursive(array, l, mid, value));
 	}
 	if (array[mid] > value)
-		return (recursive(array, l, mid - 1, value));
+		return (recursive(array, l, mid, value));
 	return (recursive(array, mid + 1, r, value));
 }
 
