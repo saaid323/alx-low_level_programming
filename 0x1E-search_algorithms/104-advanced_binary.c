@@ -14,7 +14,7 @@ int recursive(int *array, int l, int r, int value)
 	int mid, i;
 
 	if (r >= l)
-		mid = (l + r) / 2;
+		mid =  (r + l) / 2;
 	else
 		return (-1);
 	printf("Searching in array: ");
@@ -27,10 +27,10 @@ int recursive(int *array, int l, int r, int value)
 	printf("\n");
 	if (array[mid] == value)
 	{
-		if (array[mid - 1] == value)
-			return (recursive(array, l, mid, value));
-		else
+		if ((mid == 0) || (array[mid - 1] != value))
 			return (mid);
+		else
+			return (recursive(array, l, mid, value));
 	}
 	if (array[mid] > value)
 		return (recursive(array, l, mid - 1, value));
